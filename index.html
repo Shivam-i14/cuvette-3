@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rock Paper Scissor</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="score-section" class="uppper">
+            <div class="rps">
+                <h2>ROCK</h2>
+                <h2>PAPER</h2>
+                <h2>SCISSOR</h2>
+            </div>
+            <div class="scorecard">
+                <div class="score">
+                    <h3>COMPUTER</h3>
+                    <h3>SCORE</h3>
+                    <span id="comp-score">0</span>
+                </div>
+                <div class="score">
+                    <h3>YOUR</h3>
+                    <h3>SCORE</h3>
+                    <span id="your-score">0</span>
+                </div>
+            </div>
+        </div>
+        <div id="playing-section" class="middle-1">
+            <d class="line1"></d>
+            <d class="line2"></d>
+            <d class="line3"></d>
+            <div class="upper-sec">
+                <div id="Blue" class="blue outer-circle">
+                    <div id="white" class="inner-circle">
+                        <img id="rock" src="./icons/first.png" alt="">
+                    </div>
+                </div>
+                <div id="Purple" class="purple outer-circle">
+                    <div id="white" class="inner-circle">
+                        <img id="scissor" src="./icons/second.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="lower-sec">
+                <div id="Orange" class="orange outer-circle">
+                    <div id="white" class="inner-circle">
+                        <img id="paper" src="./icons/third.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="wonPage" class="middle-2">
+            <div class="circle-1">
+                <div class="circle-2">
+                    <h3>YOU PICKED</h3>
+                    <div class="circle-3">
+                        <div id="Blue" class="blue outer-circle">
+                            <div id="white" class="inner-circle">
+                                <img id="userChoiceWon" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-1">
+                <h1>YOU WIN</h1>
+                <h2>AGAINST PC</h2>
+                <button onclick="showMainPage()">PLAY AGAIN</button>
+            </div>
+            <div class="circle-4">
+                <div class="circle-5">
+                    <h3>PC PICKED</h3>
+                    <div class="circle-6">
+                        <div id="Orange" class="orange outer-circle">
+                            <div id="white" class="inner-circle">
+                                <img id="pcChoiceWon" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lostPage" class="middle-3">
+            <div class="circle-4">
+                <div class="circle-5">
+                    <h3>YOU PICKED</h3>
+                    <div class="circle-6">
+                        <div id="Orange" class="orange outer-circle">
+                            <div id="white" class="inner-circle">
+                                <img id="userChoiceLost" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-2">
+                <h1>YOU LOST</h1>
+                <h2>AGAINST PC</h2>
+                <button onclick="showMainPage()">PLAY AGAIN</button>
+            </div>
+            <div class="circle-1">
+                <div class="circle-2">
+                    <h3>PC PICKED</h3>
+                    <div class="circle-3">
+                        <div id="Blue" class="blue outer-circle">
+                            <div id="white" class="inner-circle">
+                                <img id="pcChoiceLost" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="tiePage"  class="middle-4">
+            <div class="circle-4">
+                <div class="circle-5">
+                    <h3>YOU PICKED</h3>
+                    <div class="circle-6">
+                        <div  class="blue outer-circle">
+                            <div  class="inner-circle">
+                                <img  id="userChoiceTie" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="message-3">
+                <h1>TIE UP</h1>
+                <button onclick="showMainPage()">PLAY AGAIN</button>
+            </div>
+            <div class="circle-4">
+                <div class="circle-5">
+                    <h3>PC PICKED</h3>
+                    <div class="circle-6">
+                        <div  class="blue outer-circle">
+                            <div  class="inner-circle">
+                                <img id="pcChoiceTie" src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="hurray-section" class="hurray-page">
+            <div class="stars">
+                <img src="./icons/stars.png" alt="">
+                <div class="trophy">
+                    <img src="./icons/trophy.png" alt="">
+                </div>
+            </div>
+            <div class="message-4">
+                <h1>HURRAY!!</h1>
+                <h2>YOU WON THE GAME</h2>
+                <button onclick="showMainPage()">PLAY AGAIN</button>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="rules-sec">
+                <div class="cancel-symbol" onclick="closeRules()">✖</div>
+                <div class="game-rule">
+                    <h3>Game Rules</h3>
+                    <ul>
+                        <li>Rock beats scissors, scissors beat paper, and paper beats rock.</li>
+                        <li>Agree ahead of time whether you’ll count off “rock, paper, scissors, shoot” or just “rock, paper, scissors.”</li>
+                        <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time</li>
+                        <li>If both players lay down the same hand, each player lays down another hand</li>
+                    </ul>
+                </div>
+            </div>
+            <button id="rules" class="button-1" onclick="ShowRules()">RULES</button>
+            <button id="next" class="button-2" onclick="nextSection()">NEXT</button>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

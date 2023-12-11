@@ -1,0 +1,494 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background-color: #8CC461;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    /* justify-content: space-evenly; */
+}
+
+/* upper section css */
+
+.uppper {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    border: 2px solid white;
+    border-radius: 9px;
+    padding: .5vw 1vw;
+    margin-top: 80px;
+    width: 60%;
+    height: 150px;
+}
+
+.rps {
+    letter-spacing: 4px;
+    line-height: 1.2;
+    font-size: 1.5rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.scorecard {
+    width: 50%;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.score {
+    font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #656565;
+    width: 40%;
+    text-align: center;
+    background-color: white;
+    border-radius: 9px;
+}
+
+span {
+    font-size: 4rem;
+    color: black;
+    font-weight: bolder;
+}
+
+/* playing section css */
+
+.middle-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 18.75rem; 
+    margin-top: 3.125rem; 
+    width: 15rem; 
+    position: relative;
+}
+
+.line1 {
+    height: 0.625rem; 
+    background-color: #000000A3;
+    width: 13.75rem; 
+    transform: rotate(0deg);
+    transform-origin: left;
+    position: absolute;
+    top: 3.4375rem;
+}
+
+.line2 {
+    height: 0.625rem;
+    background-color: #000000A3;
+    width: 13.75rem;
+    transform: rotate(-60deg);
+    transform-origin: right;
+    position: absolute;
+    top: 3.1875rem; 
+    left: 0rem; 
+}
+
+.line3 {
+    height: 0.625rem;
+    background-color: #000000A3;
+    width: 13.75rem;
+    transform: rotate(60deg);
+    transform-origin: left;
+    position: absolute;
+    top: 3.1875rem;
+    left: 0rem;
+}
+
+.upper-sec {
+    display: flex;
+    gap: 7.5rem; 
+}
+
+.blue {
+    background-color: blue;
+}
+
+/* .outer-circle {
+    height: 6.875rem; 
+    width: 6.875rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+} */
+
+.purple {
+    background-color: purple;
+}
+
+.outer-circle {
+    height: 6.875rem;
+    width: 6.875rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.inner-circle {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    height: 5.3125rem; 
+    width: 5.3125rem;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.lower-sec {
+    display: flex;
+    margin-top: 4.375rem; 
+}
+
+.orange {
+    background-color: orange;
+}
+
+/* footer section */
+
+.footer {
+    padding: 0 2vw;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 500;
+    background-color: transparent;
+    color: white;
+    font-size: 21px;
+    border-style: none;
+    border: 2px solid white;
+    border-radius: 8px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+button:hover{
+    background-color: grey;
+    color: rgb(53, 44, 44);
+    border: 2px solid black;
+    transition: 0.6s ease-in-out;
+}
+
+.rules-sec {
+    /* padding: 1vw 1vw; */
+    top: 270px;
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    background-color: #004429;
+    border: 5px solid white;
+    border-radius: 8px;
+    display: none;
+
+}
+
+.game-rule {
+    /* position: absolute; */
+    height: 280px;
+    width: 280px;
+    background-color: #004429;
+}
+
+.game-rule h3 {
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+}
+
+.game-rule ul {
+    margin-left: 22px;
+    line-height: 1.25;
+    font-size: 1rem;
+    color: white;
+    list-style-type: square;
+}
+
+li::before {
+    content: "\25A0";
+    color: #FFD600;
+    font-size: 1.3em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.5em;
+}
+
+li {
+    display: flex;
+}
+
+.cancel-symbol {
+    z-index: 1;
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: red;
+    border: 3px solid white;
+    color: white;
+}
+
+/* hidden section 1 */
+
+.middle-2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 350px;
+    margin-top: 20px;
+    /* display: none; */
+}
+
+.message-1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.message-1 h1 {
+    color: white;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+.message-1 h2 {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.message-1 button {
+    border-radius: 8px;
+    background-color: white;
+    color: #6B6B6B;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.circle-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #2E9A2563;
+}
+
+.circle-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: #1DA82BC9;
+}
+.circle-2 h3 {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    z-index: 2;
+    position: absolute;
+    top: 305px;
+}
+.circle-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #3a992d;
+}
+.circle-4 {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle-5 {
+    width: 250px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.circle-5 h3 {
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    z-index: 2;
+    position: absolute;
+    top: 305px;
+}
+.circle-6 {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* hidden section 2 */
+
+.middle-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 350px;
+    margin-top: 20px;
+    /* display: none; */
+}
+.message-2 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.message-2 h1 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.message-2 h2 {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.message-2 button {
+    border-radius: 8px;
+    background-color: white;
+    color: #6B6B6B;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* hidden section 3 */
+
+.middle-4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 350px;
+    margin-top: 20px;
+    /* display: none; */
+}
+.message-3 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.message-3 h1 {
+    color: white;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+}
+
+.message-3 h2 {
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.message-3 button {
+    border-radius: 8px;
+    background-color: white;
+    color: #6B6B6B;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+/* hidden section 4 */
+
+.hurray-page{
+    width: 100%;
+    height: 100vh;
+    background-color: #8CC461;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: none;
+}
+.message-4 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.message-4 h1 {
+    color: white;
+    font-size: 5rem;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+.message-4 h2 {
+    color: white;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.message-4 button {
+    border-radius: 8px;
+    background-color: white;
+    color: #6B6B6B;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+.stars{
+    position: relative;
+}
+.trophy{
+    position: absolute;
+    top: 100px;
+    left: 165px;
+}
